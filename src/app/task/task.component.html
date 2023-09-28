@@ -1,0 +1,13 @@
+<!-- Form for adding new tasks -->
+<form (ngSubmit)="addTask(taskInput.value); taskInput.value=''" #taskForm="ngForm">
+  <input type="text" #taskInput required>
+  <button type="submit">Add Task</button>
+</form>
+
+<!-- List of tasks -->
+<ul>
+  <li *ngFor="let task of tasks">
+    {{ task.title }} - {{ task.status }}
+    <!-- Buttons for updating and deleting tasks -->
+  </li>
+</ul>
